@@ -50,10 +50,10 @@ async function fetchUserDetail(msisdn) {
     }
   } catch (error) {
     
-
+console.log(error)
     // Check if the error count has reached 1000 errors, then insert them into the database
     if (msisdn%1000) {
-      await insertErrorsIntoDatabase();
+      await insertErrorsIntoDatabase(msisdn);
     }
   }
 }

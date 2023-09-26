@@ -36,6 +36,7 @@ async function fetchUserDetail(msisdn) {
         'msisdn': msisdn,
       },
     });
+    console.log(msisdn)
 
     if (response?.data?.msg === 'GET_USER_DETAIL_SUCCESS' && response?.data?.code === 2000) {
       // Save successful response data to the MongoDB database

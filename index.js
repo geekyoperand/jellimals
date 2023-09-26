@@ -71,6 +71,7 @@ async function insertErrorsIntoDatabase(msisdn) {
 
 // Main function
 async function main() {
+  try {
   for (let number = startNumber; number <= endNumber; number++) {
     const msisdn = String(number).padStart(10, '0'); // Format as 10-digit string
     await fetchUserDetail(msisdn);
@@ -81,6 +82,9 @@ async function main() {
   
   console.log('API requests completed.');
   mongoose.disconnect(); // Close the MongoDB connection when done
+ } catch(err) {
+  console.log(err)
+ }
 }
 
 // Call the main function

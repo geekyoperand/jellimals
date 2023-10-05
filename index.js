@@ -2,8 +2,10 @@ const axios = require('axios');
 const mongoose = require('mongoose');
 
 // Define the range of 10-digit Indian phone numbers
-const startNumber = 7000000000;
+const startNumber = 6000700000;
 const endNumber = 9999999999;
+
+
 
 // MongoDB connection URL
 const mongoDBUrl = 'mongodb+srv://surajpandey0094:0094@cluster0.7y7t9uy.mongodb.net/test?tls=true';
@@ -36,7 +38,6 @@ async function fetchUserDetail(msisdn) {
         'msisdn': msisdn,
       },
     });
-    console.log(msisdn)
 
     if (response?.data?.msg === 'GET_USER_DETAIL_SUCCESS' && response?.data?.code === 2000) {
       // Save successful response data to the MongoDB database

@@ -14,8 +14,10 @@
     "axios": "^1.5.0",
     "btoa": "^1.2.1",
     "crypto-js": "^4.1.1",
+    "firebase": "^10.4.0",
     "fs": "0.0.1-security",
     "itertools": "^2.1.2",
-    "mongoose": "^7.5.3"
+    "mongoose": "^7.5.3",
+    "yarn": "^1.22.19"
   }
 }

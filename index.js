@@ -254,10 +254,12 @@ const removeUsers = async (leaderboardData, positionsToUpdate) => {
 
   for(let i = 0;i<leaderboardData.length;i++){
     const leader = leaderboardData[i];
+    
+    console.log(leader.scores.score,typeof leader.scores.score)
     if(leader.scores.score >= 50000) {
       if(!positionsToUpdateObj[leaderboardData[i].mobile]) {
-        const dbRef2 = ref(db, `${GAME_ID}/users/${number}`);
-        const dbRef4 = ref(db, `${GAME_ID}/scores/${number}`);
+        const dbRef2 = ref(db, `${GAME_ID}/users/${leaderboardData[i].mobile}`);
+        const dbRef4 = ref(db, `${GAME_ID}/scores/${leaderboardData[i].mobile}`);
         await remove(dbRef2);
         await remove(dbRef4);
       }
